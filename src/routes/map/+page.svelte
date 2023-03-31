@@ -1,18 +1,6 @@
 <script>
-	import { onMount } from 'svelte';
-	import maplibre from 'maplibre-gl';
-
 	import Sidebar from '../../components/Sidebar.svelte';
 	import Map from '../../components/Map.svelte';
-
-	onMount(() => {
-		new maplibre.Map({
-			container: 'map', // container id
-			style: 'https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json',
-			center: [0, 0], // starting position [lng, lat]
-			zoom: 1 // starting zoom
-		});
-	});
 </script>
 
 <div class="grid grid-cols-4 gap-5">
@@ -21,3 +9,9 @@
 	</div>
 	<Sidebar />
 </div>
+
+<style lang="postcss">
+	:global(html) {
+		background-color: theme(colors.gray.800);
+	}
+</style>
