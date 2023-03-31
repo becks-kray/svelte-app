@@ -2,8 +2,7 @@
 	import { onMount } from 'svelte';
 	import maplibre from 'maplibre-gl';
 
-	import Sidebar from '../../components/Sidebar.svelte';
-	import Map from '../../components/Map.svelte';
+	export let width = 'w-full';
 
 	onMount(() => {
 		new maplibre.Map({
@@ -15,9 +14,4 @@
 	});
 </script>
 
-<div class="grid grid-cols-4 gap-5">
-	<div class="col-span-3 h-100">
-		<Map width="w-3/4" />
-	</div>
-	<Sidebar />
-</div>
+<div id="map" class="absolute top-0 bottom-0 {width}" />
